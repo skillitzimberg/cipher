@@ -1,0 +1,15 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+} */
+
+function cipher() {
+  var usersMessage = prompt("Enter your message to be scrambled.");
+
+  var firstAndLastChars =
+    usersMessage.charAt(0) +
+    usersMessage.charAt(usersMessage.length-1);
+
+  display();
+};
