@@ -1,15 +1,40 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
-  font-family: monospace;
-} */
+  font-family: sans-serif;
+}
 
-function cipher() {
-  var usersMessage = prompt("Enter your message to be scrambled.");
+.container {
+  width: 70%;
+  margin: auto;
+}
 
-  var firstAndLastChars =
-    usersMessage.charAt(0) +
-    usersMessage.charAt(usersMessage.length-1);
+p {
+  text-align: justify;
+}
 
-  display();
-};
+.outputLabels {
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  border: 1px solid #777;
+  margin: 5px 0 20px;
+  width: 70%;
+  font-size: 2em;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  font-size: 1em;
+}
+
+div {
+  margin: 20px 0 20px;
+}

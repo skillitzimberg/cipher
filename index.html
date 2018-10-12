@@ -2,13 +2,35 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" href="css/styles.css">
     <title>Cipher</title>
   </head>
   <body>
-    <h1 id="displayResults"></h1>
-    <script type="text/javascript" src="js/scripts.js">
+    <div class="container">
+      <h1>Regular Expression Testing</h1>
+      <p>This app will remove anything found with your regular expression and replace it with '' - that is, nothing. Basically it just removes any matches, prints the result, then prints the result as an array of characters.</p>
 
+      <p>I made this because I'm struggling with regular expressions and wanted a way to test them out. It'll probably change as I get a better understanding of how to work with them.</p>
+
+      <form class="" action="index.html" method="post">
+        <label for="#inputString">Enter any text here: </label>
+        <input type="text" id="inputString">
+
+        <!-- <label for="#regex">Enter a regular expression here: </label> -->
+        <!-- <input type="button" id="regex" onclick="getInput()"> -->
+
+        <button type="button" name="button" onclick="getInput()">Run</button>
+      </form>
+      <div class="viewResults">
+        <p>Input with matches removed: <span id="stringAfterReplace"></span></p>
+        <p>Leftovers as an array: <span id="stringTextAsArray"></span></p>
+        <p>Letters in array: <span id="arrayLetters"></span></p>
+        <p>Numbers in array: <span id="arrayNumbers"></span></p>
+        <p>Symbols in array: <span id="arraySymbols"></span></p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/scripts.js">
     </script>
   </body>
 </html>

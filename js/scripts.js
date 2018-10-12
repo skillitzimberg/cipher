@@ -1,56 +1,33 @@
-function cipher() {
-  var userMessage = getUserMessage();
-  var firstLast = firstAndLastLetters(userMessage);
-  var upperCase = makeUpperCase(firstLast);
-  var reversed = reverseString(upperCase);
-  var joined = joinStrings(userMessage, upperCase);
-  var middleChar= findMiddleChar(joined);
 
-  display(joinStrings(middleChar, joined));
+function getInput() {
+    var userMessage = document.getElementById("inputString").value;
+    var regex = /\s/gi;
+    regexArrayGymnastics(userMessage, regex);
+  };
+
+function regexArrayGymnastics(userMessage, regex) {
+  var stringAfterReplace = userMessage.replace(regex, '');
+  display(stringAfterReplace);
+
+  var stringAsArray = stringAfterReplace.split('');
+  display(stringAsArray);
+
+  var arrayLetters = [];
+  var arrayNumbers = [];
+  var arraySymbols = [];
+
+  stringAsArray.forEach(function(character) {
+    if(character >= 0) {
+      arrayNumbers.push(character);
+    } else if(character.search(/[A-Za-z]/) >= 0){
+      arrayLetters.push(character);
+    } else {
+      arraySymbols.push(character);
+    }
+  });
+
+}
+
+function display(id) {
+  document.getElementById('id').textContent = id;
 };
-
-function getUserMessage() {
-  var userMessage =
-    prompt("Enter your message to be scrambled.");
-
-  return userMessage;
-};
-
-function display(displayMessage) {
-  document.getElementById('displayResults').innerHTML =
-    displayMessage;
-};
-
-function firstAndLastLetters(anyString) {
-  var firstLast =
-      anyString.charAt(0) +
-      anyString.charAt(anyString.length-1);
-
-  return firstLast;
-};
-
-function makeUpperCase(anyString) {
-  var upperCase = anyString.toUpperCase();
-
-  return upperCase;
-};
-
-function reverseString(anyString) {
-  var reversed = anyString.split("").reverse().join("");
-
-  return reversed;
-};
-
-function joinStrings(string1, string2) {
-  var joinedStrings = string1 + string2;
-
-  return joinedStrings;
-};
-
-function findMiddleChar(anyString) {
-  var stringLength = anyString.length;
-
-  return anyString.charAt(stringLength/2);
-};
-
-cipher();
