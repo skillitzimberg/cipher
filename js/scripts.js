@@ -7,27 +7,34 @@ function getInput() {
 
 function regexArrayGymnastics(userMessage, regex) {
   var stringAfterReplace = userMessage.replace(regex, '');
-  display(stringAfterReplace);
+  console.log(stringAfterReplace);
 
   var stringAsArray = stringAfterReplace.split('');
-  display(stringAsArray);
+  console.log(stringAsArray);
 
   var arrayLetters = [];
   var arrayNumbers = [];
+  var arrayOperators = [];
   var arraySymbols = [];
 
   stringAsArray.forEach(function(character) {
     if(character >= 0) {
       arrayNumbers.push(character);
-    } else if(character.search(/[A-Za-z]/) >= 0){
+    } else if(character.search(/[A-Za-z]/) >= 0) {
       arrayLetters.push(character);
+    } else if(character.search(/[%*+-/]/) >= 0) {
+      arrayOperators.push(character);
     } else {
       arraySymbols.push(character);
     }
   });
-
+  console.log(stringAsArray);
+  console.log(arrayLetters);
+  console.log(arrayNumbers);
+  console.log(arrayOperators);
+  console.log(arraySymbols);
 }
 
-function display(id) {
-  document.getElementById('id').textContent = id;
-};
+// function display(id) {
+//   document.getElementById('id').textContent = id;
+// };
